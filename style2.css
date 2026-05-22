@@ -24,7 +24,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-sans);
-  line-height: 1.7;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -220,8 +220,9 @@ body {
 
 .img-box.square {
   width: 200px;
-  height: 200px;
+  height: 300px;
   margin-top: 60px;
+  object-position: center top;
 }
 
 .img-box.portrait {
@@ -394,20 +395,47 @@ section.visible, .animate-fade.visible {
   transform: translateY(0);
 }
 
-/* --- RESPONSIVIDADE (MOBILE FIRST) --- */
 @media (max-width: 960px) {
   .hero-text h1 { font-size: 2.8rem; }
   .work-grid { grid-template-columns: 1fr; gap: 40px; }
-  .work-images { justify-content: center; }
-  .slide-group img { height: 320px; }
-  .slide-group video { height: 320px; }
+  
+  /* Garante que o container de imagens alinhe as duas fotos lado a lado em tablets */
+  .work-images { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .img-box.square { margin-top: 0; object-position: center 0%; }
 }
 
 @media (max-width: 640px) {
-  .navbar ul { display: none; } /* Em produção real, trocaria por menu hambúrguer */
+  .navbar ul { display: none; }
   .hero-text h1 { font-size: 2.2rem; }
   .contact-links { flex-direction: column; align-items: center; gap: 20px; }
   .slide-group { flex-direction: column; }
   .slide-group img { width: 100%; height: 280px; }
-  .img-box.square { display: none; } /* Otimização de espaço no mobile */
+  
+  /* ADICIONADO: Mantém as DUAS fotos visíveis no celular */
+  .work-images {
+    display: flex;
+    flex-direction: row; /* Mantém lado a lado */
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Ajusta o tamanho proporcional das duas caixas para caberem na tela do celular */
+  .img-box.square { 
+    /*display: block !important; /* Força a foto a aparecer (antes estava 'none') */
+    width: 240px; 
+    height: 360px; /* Altura controlada para não quebrar o layout */
+    object-position: center 0%;
+  }
+
+  .img-box.portrait { 
+    width: 240px; 
+    height: 360px; /* Mesma altura para manter o alinhamento visual no mobile */
+  }
 }
