@@ -323,7 +323,7 @@ section.visible {
 
 .biography span {
   font-style: italic;
-  font-size: 25px;
+  font-size: 22px;
   background: linear-gradient(45deg, #ff91f9, #00f3ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
