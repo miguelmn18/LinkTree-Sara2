@@ -420,7 +420,7 @@ section.visible, .animate-fade.visible {
   .hero-text h1 { font-size: 2.2rem; }
   .contact-links { flex-direction: column; align-items: center; gap: 20px; }
   .slide-group { flex-direction: column; }
-  .slide-group img { width: 100%; height: 280px; }
+  .slide-group img { width: 70%; height: 380px; object-fit:cover; margin: 0 auto;  }
   #itens{display: flex; font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     border-radius: 0%;
     outline: none;
