@@ -113,4 +113,33 @@ function inicializarGraficoProfissional() {
   renderizar();
 }
 
-document.addEventListener("DOMContentLoaded", inicializarGraficoProfissional);
+const selectItens = document.getElementById("itens");
+
+selectItens.addEventListener("change", function() {
+  const destino = this.value; // Pega o valor da opção selecionada (ex: #biography)
+  
+  if (destino) {
+    // Faz a página rolar suavemente até o elemento com o ID correspondente
+    document.querySelector(destino).scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+});
+
+
+// 2. Adiciona o evento 'change' (mudança)
+selectItens.addEventListener("change", function() {
+  // 'this.value' pega o valor da <option> que foi clicada/selecionada
+  const valorSelecionado = this.value; 
+  
+  console.log("O usuário escolheu a cor: " + valorSelecionado);
+  
+  // Exemplo de ação com o valor:
+  if (valorSelecionado === "azul") {
+      document.body.style.backgroundColor = "lightblue";
+  } else if (valorSelecionado === "verde") {
+      document.body.style.backgroundColor = "lightgreen";
+  } else if (valorSelecionado === "vermelho") {
+      document.body.style.backgroundColor = "coral";
+  }
+});
