@@ -1,15 +1,17 @@
-// Gerenciamento do Carrossel
+// ==========================================
+// 1. Gerenciamento do Carrossel
+// ==========================================
 const track = document.querySelector(".carrousel-track");
-const slides = Array.from(track.children);
+const slides = Array.from(track ? track.children : []);
 const btnLeft = document.querySelector(".btn-left");
 const btnRight = document.querySelector(".btn-right");
 let index = 0;
 
 function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
+  if (track) track.style.transform = `translateX(-${index * 100}%)`;
 }
 
-if (btnRight && btnLeft) {
+if (btnRight && btnLeft && slides.length > 0) {
   btnRight.addEventListener("click", () => {
     index = (index + 1) % slides.length;
     updateCarousel();
@@ -21,14 +23,16 @@ if (btnRight && btnLeft) {
   });
 }
 
-// Animação Inteligente de Scroll (Intersection Observer - Melhor Performance)
+// ==========================================
+// 2. Animação Inteligente de Scroll
+// ==========================================
 const sections = document.querySelectorAll("section, .animate-fade");
 
 const appearanceObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      observer.unobserve(entry.target); // Executa a animação apenas uma vez
+      observer.unobserve(entry.target); 
     }
   });
 }, {
@@ -38,7 +42,9 @@ const appearanceObserver = new IntersectionObserver((entries, observer) => {
 sections.forEach(sec => appearanceObserver.observe(sec));
 
 
-// Inicialização do Gráfico com Design Premium (Cores Sóbrias)
+// ==========================================
+// 3. Inicialização do Gráfico (Visão Macroscópica)
+// ==========================================
 function inicializarGraficoProfissional() {
   const canvas = document.getElementById('graficoProfissional');
   if (!canvas) return;
@@ -66,13 +72,17 @@ function inicializarGraficoProfissional() {
     const larguraCard = larguraTexto + (paddingX * 2);
     const alturaCard = 16 + (paddingY * 2);
     
-    // Design Limpo: Fundo sólido com bordas extremamente sutis
     ctx.fillStyle = eCentro ? "#1a1a1a" : "#ffffff";
     ctx.strokeStyle = eCentro ? "#1a1a1a" : "#e8e5e0";
     ctx.lineWidth = 1;
     
     ctx.beginPath();
-    ctx.roundRect(x - larguraCard / 2, y - alturaCard / 2, larguraCard, alturaCard, 4); // Cantos levemente facetados (estilo SaaS moderno)
+    // Tratativa para garantir suporte ao roundRect
+    if (ctx.roundRect) {
+      ctx.roundRect(x - larguraCard / 2, y - alturaCard / 2, larguraCard, alturaCard, 4);
+    } else {
+      ctx.rect(x - larguraCard / 2, y - alturaCard / 2, larguraCard, alturaCard);
+    }
     ctx.fill();
     ctx.stroke();
     
@@ -86,7 +96,6 @@ function inicializarGraficoProfissional() {
   function renderizar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Desenha linhas conectores elegantes de tom cinza suave
     nosSatelites.forEach((satelite) => {
       const satX = centroX + distanciaDoCentro * Math.cos(satelite.angulo);
       const satY = centroY + distanciaDoCentro * Math.sin(satelite.angulo);
@@ -99,47 +108,40 @@ function inicializarGraficoProfissional() {
       ctx.stroke();
     });
     
-    // Desenha os nós periféricos
     nosSatelites.forEach((satelite) => {
       const satX = centroX + distanciaDoCentro * Math.cos(satelite.angulo);
       const satY = centroY + distanciaDoCentro * Math.sin(satelite.angulo);
       desenharCapsulaTexto(ctx, satX, satY, satelite.texto, false);
     });
     
-    // Desenha o nó central por cima
     desenharCapsulaTexto(ctx, centroX, centroY, noCentral.texto, true);
   }
 
   renderizar();
 }
 
+// ==========================================
+// 4. Menu Dropdown (Navegação Interna)
+// ==========================================
 const selectItens = document.getElementById("itens");
 
-selectItens.addEventListener("change", function() {
-  const destino = this.value; // Pega o valor da opção selecionada (ex: #biography)
-  
-  if (destino) {
-    // Faz a página rolar suavemente até o elemento com o ID correspondente
-    document.querySelector(destino).scrollIntoView({
-      behavior: "smooth"
-    });
-  }
-});
+if (selectItens) {
+  selectItens.addEventListener("change", function() {
+    const destino = this.value; 
+    
+    // Verifica se o valor é de fato um seletor de ID (começa com #)
+    if (destino && destino.startsWith('#')) {
+      const elementoDestino = document.querySelector(destino);
+      if (elementoDestino) {
+        elementoDestino.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+}
 
-
-// 2. Adiciona o evento 'change' (mudança)
-selectItens.addEventListener("change", function() {
-  // 'this.value' pega o valor da <option> que foi clicada/selecionada
-  const valorSelecionado = this.value; 
-  
-  console.log("O usuário escolheu a cor: " + valorSelecionado);
-  
-  // Exemplo de ação com o valor:
-  if (valorSelecionado === "azul") {
-      document.body.style.backgroundColor = "lightblue";
-  } else if (valorSelecionado === "verde") {
-      document.body.style.backgroundColor = "lightgreen";
-  } else if (valorSelecionado === "vermelho") {
-      document.body.style.backgroundColor = "coral";
-  }
+// ==========================================
+// 5. Inicialização Geral após o carregamento do DOM
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  inicializarGraficoProfissional();
 });
