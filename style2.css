@@ -437,28 +437,39 @@ section.visible, .animate-fade.visible {
   background-color: #ff5722; /* Cor do fundo da seleção */
   color: white;              /* Cor do texto selecionado */
   }
-  /* ADICIONADO: Mantém as DUAS fotos visíveis no celular */
+  .work-section {
+    padding: 50px 0;
+    /* Removido o 'align-items' e 'margin' desnecessários daqui */
+  }
+
+  /* ADICIONADO: Mantém as DUAS fotos visíveis no celular sem estourar a tela */
   .work-images {
     display: flex;
     flex-direction: row; /* Mantém lado a lado */
     justify-content: center;
     gap: 12px;
     width: 100%;
-    padding: 0 10px;
+    padding: 0; /* Removido padding que empurrava para os lados */
   }
 
-  /* Ajusta o tamanho proporcional das duas caixas para caberem na tela do celular */
+  /* CORRIGIDO: Agora as fotos usam porcentagem para se adaptarem a qualquer tela de celular */
   .img-box.square { 
-    /*display: block !important; /* Força a foto a aparecer (antes estava 'none') */
-    width: 240px; 
-    height: 360px; /* Altura controlada para não quebrar o layout */
+    width: 48%;          /* Ocupa quase metade da tela disponível */
+    max-width: 160px;    /* Não deixa a foto crescer demais em telas ligeiramente maiores */
+    height: 240px;       /* Reduzido a altura para ficar proporcional à nova largura */
     object-position: center 0%;
   }
 
   .img-box.portrait { 
-    width: 240px; 
-    height: 360px; /* Mesma altura para manter o alinhamento visual no mobile */
+    width: 48%;          /* Ocupa a outra metade */
+    max-width: 160px;
+    height: 240px;       /* Mantém a mesma altura para simetria */
+  }
+
+  .work-text p {  
+    width: 100%;         /* Melhor usar 100% já que o container já tem padding */
   }
   #graficoProfissional{width: 100%; height: 200px; object-fit: cover;}
-  .work-section{ position:relative; right: 7px;}
+  
+  
 }
