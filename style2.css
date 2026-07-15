@@ -125,7 +125,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; /* Foca o enquadramento no terço superior da foto */
+  
+  object-position: center ; /* Foca o enquadramento no terço superior da foto */
 }
 
 /* --- TÍTULOS DE SEÇÃO PADRONIZADOS --- */
@@ -151,6 +152,13 @@ body {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -0.5px;
+}
+
+.work-text h4{
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+
 }
 
 /* --- SEÇÃO BIOGRAFIA --- */
@@ -205,35 +213,53 @@ body {
   color: var(--text-main);
 }
 
+/* Container principal do mosaico */
 .work-images {
-  display: flex;
-  gap: 24px;
-  position: relative;
+  max-width: 100%;
+  width: 600px;
+  display: grid;
+  /* Cria uma grade de 4 colunas com tamanhos iguais */
+  grid-template-columns: repeat(2, 4fr);
+  /* Define uma altura base para as linhas do grid */
+  grid-auto-rows: 85px;
+  /* Espaçamento entre as fotos */
+  gap: 10px; 
+  padding: 10px;
+  
 }
 
+/* Configuração geral de cada caixa de imagem */
 .img-box {
-  background-color: #eee;
-  border-radius: 8px;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  border-radius: 8px; /* Cantos levemente arredondados para um visual moderno */
 }
 
-.img-box.square {
-  width: 200px;
-  height: 300px;
-  margin-top: 60px;
-  object-position: center top;
-}
-
-.img-box.portrait {
-  width: 260px;
-  height: 340px;
-}
-
+/* Comportamento da imagem dentro da caixa (Efeito Cover) */
 .img-cover {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Faz a imagem preencher a caixa sem distorcer */
+  object-position: center;
+  transition: transform 0.3s ease; /* Transição suave para um efeito de zoom */
+}
+
+/* Efeito de zoom ao passar o mouse */
+.img-box:hover .img-cover {
+  transform: scale(1.05);
+}
+
+/* --- REGRAS DO MOSAICO (Como cada formato se comporta) --- */
+
+/* Imagens verticais (portrait) vão ocupar 2 linhas de altura */
+.img-box.portrait {
+  grid-row: span 2;
+}
+
+/* Imagens quadradas (square) vão ocupar 2 colunas de largura */
+.img-box.square {
+  grid-column: span 2;
+  grid-row: span 2; /* Se quiser que ela fique gigante, pode ocupar 2x2 */
 }
 
 /* --- PORTFÓLIO & CARROSSEL --- */
