@@ -363,6 +363,88 @@ body {
   overflow-x: auto; /* Garante que não quebre em telas menores */
 }
 
+/* --- GRID DE SERVIÇOS --- */
+.services-grid {
+  display: grid;
+  /* Cria um grid adaptável que se ajusta automaticamente ao tamanho da tela */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  padding: 20px 0;
+}
+
+/* --- ESTILIZAÇÃO DO CARD --- */
+.service-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhamento à esquerda estilo editorial */
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Transição suave e premium */
+  position: relative;
+}
+
+/* Efeito ao passar o mouse */
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(197, 168, 128, 0.08); /* Sombra suave usando a cor dourada champanhe */
+}
+
+/* Espaço do Ícone */
+.service-icon-wrapper {
+  background-color: #fcfbf9; /* Usa seu off-white perolado */
+  border: 1px solid var(--border-color);
+  color: var(--accent); /* Ícone no dourado champanhe fosco */
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+}
+
+/* O ícone destaca quando o card recebe hover */
+.service-card:hover .service-icon-wrapper {
+  background-color: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* Título do Card */
+.service-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+/* Descrição do Card */
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --- AJUSTE DE RESPONSIVIDADE --- */
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* Em celulares, exibe um card por linha */
+    gap: 24px;
+  }
+  
+  .service-card {
+    padding: 32px 24px; /* Diminui levemente o espaçamento interno no mobile */
+  }
+}
+
 #graficoProfissional {
   max-width: 100%;
   height: auto;
@@ -449,15 +531,21 @@ select{
     right: 40px;
     background-color: #25d366;
     color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
+    border-radius: 50%; /* Mantém a bola perfeitamente redonda */
     box-shadow: 2px 2px 3px #999;
     z-index: 100000;
+    
+    /* --- O SEGREDO DA CENTRALIZAÇÃO --- */
+    display: flex;
+    align-items: center;     /* Centraliza na vertical */
+    justify-content: center;  /* Centraliza na horizontal */
+    text-decoration: none;    /* Garante que não tenha traço de link embaixo */
 }
 
-.icone-whatsapp {
-    margin-top: 16px;
+.botao-whatsapp i {
+    font-size: 32px; /* Controla o tamanho do ícone aqui dentro */
+    margin: 0;       /* Remove qualquer margem que possa desalinhá-lo */
+    padding: 0;
 }
 @media (max-width: 960px) {
   .hero-text h1 { font-size: 2.8rem; }
