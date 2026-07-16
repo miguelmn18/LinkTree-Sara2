@@ -145,3 +145,20 @@ if (selectItens) {
 document.addEventListener("DOMContentLoaded", () => {
   inicializarGraficoProfissional();
 });
+
+function navegar(select) {
+  const valor = select.value;
+  
+  if (!valor) return; // Se for o "Selecione uma opção...", não faz nada.
+
+  if (valor.endsWith('.pdf')) {
+    // Se for o PDF do certificado, abre em uma nova aba
+    window.open(valor, '_blank');
+  } else {
+    // Se for biografia, trajetória, etc., rola a página atual até a seção
+    window.location.href = valor;
+  }
+
+  // Reseta o campo para voltar a exibir "Selecione uma opção..."
+  select.value = "";
+}

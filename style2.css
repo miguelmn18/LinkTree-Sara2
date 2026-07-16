@@ -433,6 +433,9 @@ section.visible, .animate-fade.visible {
   transform: translateY(0);
 }
 
+select{
+  display: none;
+}
 @media (max-width: 960px) {
   .hero-text h1 { font-size: 2.8rem; }
   .work-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -447,7 +450,11 @@ section.visible, .animate-fade.visible {
   .img-box.square { margin-top: 0; object-position: center 0%; }
 }
 
+
 @media (max-width: 640px) {
+  select{
+    display: flex;
+  }
   .navbar ul { display: none; }
   .hero-text h1 { font-size: 2.2rem; }
   .contact-links { flex-direction: column; align-items: center; gap: 20px; }

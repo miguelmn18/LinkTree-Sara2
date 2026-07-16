@@ -1,222 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style2.css">
-  <title>Sara de Almeida | Social Media & Marketing Digital</title>
-  <link rel="icon" type="image/png" href="imagens/perfil-pagina.png">
-  <meta name="google-site-verification" content="_PY7ZLYfQWidTsiC3mEQbxwdr2duUW-QVaF2gKge7Z4" />
-  <meta name="description" content="Marketing Digital! Aqui a sua empresa ganha destaque, reposicionamento no mercado e ganhos crescentes!">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <title>Sara de Almeida | Social Media & Marketing Digital</title>
+    <link rel="icon" type="image/png" href="imagens/perfil-pagina.png" />
+    <meta
+      name="google-site-verification"
+      content="_PY7ZLYfQWidTsiC3mEQbxwdr2duUW-QVaF2gKge7Z4"
+    />
+    <meta
+      name="description"
+      content="Marketing Digital! Aqui a sua empresa ganha destaque, reposicionamento no mercado e ganhos crescentes!"
+    />
+  </head>
+  <body>
+    <!-- Navbar Minimalista -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="" class="nav-logo">Sara Almeida</a>
+        <select name="navegacao" id="idnavegacao" onchange="navegar(this)">
+          <option value="">Selecione uma opção...</option>
+          <!-- Removemos o "href" que não existe aqui, deixamos apenas o value -->
+          <option value="./CERTIFICADO - Sara de Almeida Oliveira.pdf">
+            Certificado
+          </option>
+          <option value="#biography">Biografia</option>
+          <option value="#work">Trajetória</option>
+          <option value="#portfolio">Destaques</option>
+          <option value="#contact">Contato</option>
+        </select>
 
-  <!-- Navbar Minimalista -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href=""class="nav-logo">Sara Almeida</a>
-
-    
-      
-      <ul>
-        <li><a href="#biography">Biografia</a></li>
-        <li><a href="#work">Trajetória</a></li>
-        <li><a href="#portfolio">Destaques</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Cabeçalho Principal (Apresentação Intimista) -->
-  <header class="hero-section">
-    <div class="hero-text animate-fade">
-      <h1>Sara Almeida</h1>
-      <p class="hero-subtitle">Marketing Digital & Social Media</p>
-    </div>
-    <div class="hero-image-wrapper animate-fade">
-      <img src="imagens/perfil2.jpg" alt="Foto de perfil de Sara Almeida" class="profile-pic">
-    </div>
-  </header>
-
-  <main class="container">
-    
-    <!-- Seção Biografia -->
-    <section class="biography-section" id="biography">
-      <div class="section-title">
-        <span>Quem Sou</span>
-        <h2>A paixão por conectar marcas e pessoas</h2>
+        <ul>
+          <li>
+            <a
+              href="./CERTIFICADO - Sara de Almeida Oliveira.pdf"
+              target="_blank"
+              >Certificado</a
+            >
+          </li>
+          <li><a href="#biography">Biografia</a></li>
+          <li><a href="#work">Trajetória</a></li>
+          <li><a href="#portfolio">Destaques</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
       </div>
-      <div class="biography-content">
-        <p>
-          Atuar estrategicamente no Marketing e como Social Media ativa aos 25 anos não era o plano inicial, mas transformou-se na minha maior realização profissional. Minha trajetória começou aos 16 anos, logo após o ensino médio. Atuando no atendimento direto e no controle operacional, descobri minha verdadeira paixão: a troca com o público e a análise de comportamento de consumo.
-        </p>
-        <p>
-          Após passagens consolidadas por segmentos de moda, calçados e perfumaria, compreendi que meu olhar analítico convergia para a comunicação visual e a fotografia. Minha mente buscava constantemente criar formas de vender mais e ampliar o alcance dos negócios. Embora o mercado tradicional nem sempre dê espaço para a inovação de quem está na linha de frente, usei esses anos como o laboratório perfeito para o que faço hoje.
-        </p>
-        <blockquote class="highlight-quote">
-          "O crescimento sustentável no digital não é fruto do acaso, mas sim de uma estratégia refinada e bem executada."
-        </blockquote>
-      </div>
-    </section>
+    </nav>
 
-    <!-- Seção Trajetória Profissional -->
-    <section class="work-section" id="work">
-      <div class="work-grid">
-        <div class="work-text">
-          <div class="section-title">
-            <span>Experiência</span>
-            <h2>Resultados Baseados em Dados e Criatividade</h2>
-          </div>
+    <!-- Cabeçalho Principal (Apresentação Intimista) -->
+    <header class="hero-section">
+      <div class="hero-text animate-fade">
+        <h1>Sara Almeida</h1>
+        <p class="hero-subtitle">Marketing Digital & Social Media</p>
+      </div>
+      <div class="hero-image-wrapper animate-fade">
+        <img
+          src="imagens/perfil2.jpg"
+          alt="Foto de perfil de Sara Almeida"
+          class="profile-pic"
+        />
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Seção Biografia -->
+      <section class="biography-section" id="biography">
+        <div class="section-title">
+          <span>Quem Sou</span>
+          <h2>A paixão por conectar marcas e pessoas</h2>
+        </div>
+        <div class="biography-content">
           <p>
-            Iniciei minha jornada de forma independente na fotografia de eventos, edição de vídeo e design digital, aprimorando a técnica de contar histórias visuais que retêm a atenção. 
+            Atuar estrategicamente no Marketing e como Social Media ativa aos 25
+            anos não era o plano inicial, mas transformou-se na minha maior
+            realização profissional. Minha trajetória começou aos 16 anos, logo
+            após o ensino médio. Atuando no atendimento direto e no controle
+            operacional, descobri minha verdadeira paixão: a troca com o público
+            e a análise de comportamento de consumo.
           </p>
-          <h4>Rede Paraíba, 2023</h4>
-          <p> Nincho de rede de supermercados, trabalho orgânico realizado de forma presencial, com stories diários, e campanhas da mesma categoria.</p>
-          <h4>Rede Bignordeste, 2025</h4>
           <p>
-            Nincho de rede de supermercados, trabalho orgânico realizado de forma presencial, com stories diários, e campanhas da mesma categoria. Trabalho que trouxe a explosão do marketing, com o aumento de seguidores diário, e meio milhão de vizualizações no perfil, diários.
+            Após passagens consolidadas por segmentos de moda, calçados e
+            perfumaria, compreendi que meu olhar analítico convergia para a
+            comunicação visual e a fotografia. Minha mente buscava
+            constantemente criar formas de vender mais e ampliar o alcance dos
+            negócios. Embora o mercado tradicional nem sempre dê espaço para a
+            inovação de quem está na linha de frente, usei esses anos como o
+            laboratório perfeito para o que faço hoje.
           </p>
+          <blockquote class="highlight-quote">
+            "O crescimento sustentável no digital não é fruto do acaso, mas sim
+            de uma estratégia refinada e bem executada."
+          </blockquote>
         </div>
-        <div class="work-images">
-          <div class="img-box portrait">
-            <img src="imagens/big-nordeste-1.jpg" alt="Retrato profissional" class="img-cover">
-          </div>
-          <div class="img-box portrait">
-            <img src="imagens/big-nordeste-2.jpg" alt="Retrato profissional" class="img-cover">
-          </div>
-          <div class="img-box square">
-            <img src="imagens/big-nordeste-3.jpg" alt="Sara Almeida trabalhando" class="img-cover">
-          </div>
-          <div class="img-box portrait">
-            <img src="imagens/rede-paraiba-3.jpg" alt="Retrato profissional" class="img-cover">
-          </div>
-          <div class="img-box portrait">
-            <img src="imagens/rede-paraiba-4.jpg" alt="Retrato profissional" class="img-cover">
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Seção Carrossel (Portfólio) -->
-    <section class="portfolio-section" id="portfolio">
-      <div class="section-title center">
-        <span>Portfólio</span>
-        <h2>Trabalhos em Destaque</h2>
-      </div>
-      
-      <div class="carrousel-container">
-        <div class="carrousel-track">
-          <div class="slide-group">
-            <img src="imagens-serviço/croche-1.PNG" alt="Projeto de Social Media 1">
-            <img src="imagens-serviço/croche-2.PNG" alt="Projeto de Social Media 2">
+      <!-- Seção Trajetória Profissional -->
+      <section class="work-section" id="work">
+        <div class="work-grid">
+          <div class="work-text">
+            <div class="section-title">
+              <span>Experiência</span>
+              <h2>Resultados Baseados em Dados e Criatividade</h2>
+            </div>
+            <p>
+              Iniciei minha jornada de forma independente na fotografia de
+              eventos, edição de vídeo e design digital, aprimorando a técnica
+              de contar histórias visuais que retêm a atenção.
+            </p>
+            <h4>Rede Paraíba, 2023</h4>
+            <p>
+              Nincho de rede de supermercados, trabalho orgânico realizado de
+              forma presencial, com stories diários, e campanhas da mesma
+              categoria. Trabalho que trouxe a explosão do marketing, com o
+              aumento de seguidores diário, e meio milhão de vizualizações no
+              perfil, diários.
+            </p>
+            <h4>Rede Bignordeste, 2025</h4>
+            <p>
+              Nincho de rede de supermercados, trabalho orgânico realizado de
+              forma presencial, com stories diários, e campanhas da mesma
+              categoria.
+            </p>
           </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/IMG_4953.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4954.PNG" alt="Identidade Visual 2">
+          <div class="work-images">
+            <div class="img-box portrait">
+              <img
+                src="imagens/big-nordeste-1.jpg"
+                alt="Retrato profissional"
+                class="img-cover"
+              />
+            </div>
+            <div class="img-box portrait">
+              <img
+                src="imagens/big-nordeste-2.jpg"
+                alt="Retrato profissional"
+                class="img-cover"
+              />
+            </div>
+            <div class="img-box square">
+              <img
+                src="imagens/big-nordeste-3.jpg"
+                alt="Sara Almeida trabalhando"
+                class="img-cover"
+              />
+            </div>
+            <div class="img-box portrait">
+              <img
+                src="imagens/rede-paraiba-3.jpg"
+                alt="Retrato profissional"
+                class="img-cover"
+              />
+            </div>
+            <div class="img-box portrait">
+              <img
+                src="imagens/rede-paraiba-4.jpg"
+                alt="Retrato profissional"
+                class="img-cover"
+              />
+            </div>
           </div>
-          <div class="slide-group">
-           <img src="imagens-serviço/IMG_4955.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/canna-2.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/canna-3.1.PNG" alt="Identidade Visual 1">
-            <img src="imagens-serviço/sara-1.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/sara-2.PNG" alt="Identidade Visual 1">
-            <img src="imagens-serviço/sara-4.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/sara-5.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/sara-6.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/sara-7.PNG" alt="Identidade Visual 1">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/IMG_4938.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4939.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/IMG_4940.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4941.PNG" alt="Identidade Visual 2">
-          </div>  
-          <div class="slide-group">
-            <img src="imagens-serviço/IMG_4942.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4943.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group">
-            <img src="imagens-serviço/IMG_4944.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4945.PNG" alt="Identidade Visual 2">
-          </div>
-           <div class="slide-group">
-            <img src="imagens-serviço/IMG_4946.PNG" alt="Identidade Visual 1" >
-            <img src="imagens-serviço/IMG_4947.PNG" alt="Identidade Visual 2">
-          </div>
-           <div class="slide-group">
-            <img src="imagens-serviço/IMG_4950.PNG" alt="Identidade Visual 2">
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/video-1.mp4" controls></video>
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/video-2.mp4" controls></video>
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/IMG_4960.MP4" controls></video>
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/IMG_4959.MP4" controls></video>
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/IMG_4958.MP4" controls></video>
-          </div>
-          <div class="slide-group video-slide">
-            <video src="imagens-serviço/IMG_4957.MP4" controls></video>
-          </div>
-          
-         
         </div>
-        <button class="btn-nav btn-left" aria-label="Slide anterior">&#10229;</button>
-        <button class="btn-nav btn-right" aria-label="Próximo slide">&#10230;</button>
-      </div>
-    </section>
+      </section>
 
-    <!-- Seção Gráfico e Estratégia -->
-    <section class="strategy-section animated fade">
-      <div class="strategy-intro">
+      <!-- Seção Carrossel (Portfólio) -->
+      <section class="portfolio-section" id="portfolio">
         <div class="section-title center">
-          <span>Metodologia</span>
-          <h2>Visão Macroscópica do Digital</h2>
+          <span>Portfólio</span>
+          <h2>Trabalhos em Destaque</h2>
         </div>
-        <p>
-          Cada peça de design, linha de roteiro ou edição final segue uma metodologia triangular de crescimento orgânico focado em posicionamento premium.
+
+        <div class="carrousel-container">
+          <div class="carrousel-track">
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/croche-1.PNG"
+                alt="Projeto de Social Media 1"
+              />
+              <img
+                src="imagens-serviço/croche-2.PNG"
+                alt="Projeto de Social Media 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4953.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4954.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4955.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/canna-2.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/canna-3.1.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img src="imagens-serviço/sara-1.PNG" alt="Identidade Visual 2" />
+            </div>
+            <div class="slide-group">
+              <img src="imagens-serviço/sara-2.PNG" alt="Identidade Visual 1" />
+              <img src="imagens-serviço/sara-4.PNG" alt="Identidade Visual 2" />
+            </div>
+            <div class="slide-group">
+              <img src="imagens-serviço/sara-5.PNG" alt="Identidade Visual 1" />
+              <img src="imagens-serviço/sara-6.PNG" alt="Identidade Visual 2" />
+            </div>
+            <div class="slide-group">
+              <img src="imagens-serviço/sara-7.PNG" alt="Identidade Visual 1" />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4938.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4939.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4940.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4941.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4942.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4943.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4944.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4945.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4946.PNG"
+                alt="Identidade Visual 1"
+              />
+              <img
+                src="imagens-serviço/IMG_4947.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group">
+              <img
+                src="imagens-serviço/IMG_4950.PNG"
+                alt="Identidade Visual 2"
+              />
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/video-1.mp4" controls></video>
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/video-2.mp4" controls></video>
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/IMG_4960.MP4" controls></video>
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/IMG_4959.MP4" controls></video>
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/IMG_4958.MP4" controls></video>
+            </div>
+            <div class="slide-group video-slide">
+              <video src="imagens-serviço/IMG_4957.MP4" controls></video>
+            </div>
+          </div>
+          <button class="btn-nav btn-left" aria-label="Slide anterior">
+            &#10229;
+          </button>
+          <button class="btn-nav btn-right" aria-label="Próximo slide">
+            &#10230;
+          </button>
+        </div>
+      </section>
+
+      <!-- Seção Gráfico e Estratégia -->
+      <section class="strategy-section animated fade">
+        <div class="strategy-intro">
+          <div class="section-title center">
+            <span>Metodologia</span>
+            <h2>Visão Macroscópica do Digital</h2>
+          </div>
+          <p>
+            Cada peça de design, linha de roteiro ou edição final segue uma
+            metodologia triangular de crescimento orgânico focado em
+            posicionamento premium.
+          </p>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="graficoProfissional" width="800" height="400"></canvas>
+        </div>
+      </section>
+
+      <!-- Rodapé de Contato -->
+      <footer class="contact-footer" id="contact">
+        <h3>Vamos construir o posicionamento da sua marca?</h3>
+        <div class="contact-links">
+          <a
+            href="https://www.instagram.com/saradealmeidaa/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="imagens/instagram.png" alt="" /> Instagram
+          </a>
+          <a href="https://wa.me/558381590351" target="_blank" rel="noopener">
+            <img src="imagens/whatsapp.png" alt="" /> WhatsApp
+          </a>
+          <a href="mailto:saraalmeida878@gmail.com">
+            <img src="imagens/gmail.png" alt="" /> saraalmeida898@gmail.com
+          </a>
+        </div>
+        <p class="copyright">
+          &copy; 2026 Sara Almeida. Todos os direitos reservados.
         </p>
-      </div>
-      <div class="chart-wrapper">
-        <canvas id="graficoProfissional" width="800" height="400"></canvas>
-      </div>
-    </section>
+      </footer>
+    </main>
 
-    <!-- Rodapé de Contato -->
-    <footer class="contact-footer" id="contact">
-      <h3>Vamos construir o posicionamento da sua marca?</h3>
-      <div class="contact-links">
-        <a href="https://www.instagram.com/saradealmeidaa/" target="_blank" rel="noopener">
-          <img src="imagens/instagram.png" alt=""> Instagram
-        </a>
-        <a href="https://wa.me/558381590351" target="_blank" rel="noopener">
-          <img src="imagens/whatsapp.png" alt=""> WhatsApp
-        </a>
-        <a href="mailto:saraalmeida878@gmail.com">
-          <img src="imagens/gmail.png" alt=""> saraalmeida898@gmail.com
-        </a>
-      </div>
-      <p class="copyright">&copy; 2026 Sara Almeida. Todos os direitos reservados.</p>
-    </footer>
-
-  </main>
-
-  <script src="script2.js"></script>
-</body>
+    <script src="script2.js"></script>
+  </body>
 </html>
