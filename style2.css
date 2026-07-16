@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 /* --- CONFIGURAÇÕES GERAIS --- */
 :root {
   --bg-color: #fcfbf9;       /* Off-white perolado, traz aspecto editorial limpo */
@@ -421,6 +422,9 @@ body {
   accent-color: #ff5722;
 }
 
+
+
+
 /* --- ANIMAÇÃO DE ROLAGEM SUAVE --- */
 section, .animate-fade {
   opacity: 0;
@@ -435,6 +439,25 @@ section.visible, .animate-fade.visible {
 
 select{
   display: none;
+}
+
+.botao-whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100000;
+}
+
+.icone-whatsapp {
+    margin-top: 16px;
 }
 @media (max-width: 960px) {
   .hero-text h1 { font-size: 2.8rem; }
