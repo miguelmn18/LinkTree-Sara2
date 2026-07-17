@@ -68,6 +68,10 @@ body {
   color: var(--text-main);
   text-decoration: none;
 }
+.nav-logo img{
+  width: 85%;
+  height: 60px;
+}
 
 .navbar ul {
   display: flex;
@@ -455,15 +459,29 @@ body {
 
 /* --- FOOTER DE CONTATO --- */
 .contact-footer {
-  padding: 100px 0 40px 0;
-  text-align: center;
+    display: flex;
+    flex-direction: column;  /* Empilha os elementos (Título, Foto, Links, Copyright) */
+    align-items: center;     /* Centraliza todo mundo horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center;      /* Garante o texto do título e p centralizados */
+    gap: 12px;               /* <--- ESSA TAG CONTROLA A DISTÂNCIA: mude para 8px ou 10px se quiser AINDA mais junto */
+    padding: 40px 20px;
 }
+.nav-footer img{
+  position: relative;
+    bottom: 30px;
+    height: 160px;            /* Ajuste o tamanho da foto como preferir */
+    width: 100%;
+    border-radius: 50%;      /* Deixa a foto redondinha, se quiser */
+    display: block;
 
+}
 .contact-footer h3 {
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 40px;
   letter-spacing: -0.5px;
+  padding: 0;
 }
 
 .contact-links {
@@ -505,9 +523,6 @@ body {
   outline: none;
   accent-color: #ff5722;
 }
-
-
-
 
 /* --- ANIMAÇÃO DE ROLAGEM SUAVE --- */
 section, .animate-fade {
@@ -565,6 +580,11 @@ select{
 
 
 @media (max-width: 640px) {
+
+  .nav-footer img{
+    
+    height: 50px;
+  }
   select{
     display: flex;
   }
